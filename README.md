@@ -6,7 +6,8 @@ Master 2 MIAGE (spécialité Systèmes d'Information Fiables et Intelligence des
 
 **Portfolio en ligne : [nourelislm93700.github.io/My-Portfolio](https://nourelislm93700.github.io/My-Portfolio)**
 
-Comment consulter le portfolio : cliquez sur le lien ci-dessus, tout se lit directement dans le navigateur, y compris sur mobile. Un bouton FR/EN en haut de la page permet de changer de langue, et le CV ainsi que le calendrier de formation sont téléchargeables depuis la page.
+Comment consulter le portfolio : Téléchargez le projet en cliquant sur **Code**, puis sur **Download ZIP**. Une fois le téléchargement terminé, faites un clic droit sur le fichier ZIP et sélectionnez **Extraire tout**. Enfin, ouvrez le fichier **index.html** avec le navigateur de votre choix pour consulter le portfolio.
+
 
 ---
 

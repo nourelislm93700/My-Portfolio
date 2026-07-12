@@ -1,10 +1,12 @@
 # Nour ELHADJ-MIMOUNE
 
-Alternant MIAGE, Développeur Full-Stack & Data Analyst — Paris, Île-de-France
+Alternant MIAGE, Développeur Full-Stack & Data Analyst basé à Paris, Île-de-France.
 
 Master 2 MIAGE (spécialité Systèmes d'Information Fiables et Intelligence des Données) à l'Université Paris Nanterre, à partir de septembre 2026, en alternance (3 semaines entreprise / 3 semaines formation).
 
 **Portfolio en ligne : [nourelislm93700.github.io/My-Portfolio](https://nourelislm93700.github.io/My-Portfolio)**
+
+Comment consulter le portfolio : cliquez sur le lien ci-dessus, tout se lit directement dans le navigateur, y compris sur mobile. Un bouton FR/EN en haut de la page permet de changer de langue, et le CV ainsi que le calendrier de formation sont téléchargeables depuis la page.
 
 ---
 
@@ -23,7 +25,7 @@ En parallèle de mes études, j'ai occupé deux emplois de terrain (hôte d'accu
 - **Référentiels** : PMBOK, PRINCE2, ITIL, SAFe, LEAN Six Sigma
 - **Langues** : français (natif), anglais (courant)
 
-Le détail complet des compétences est disponible sur le [portfolio](https://nourelislm93700.github.io/NOM_DU_DEPOT) et dans le [CV](./CV_Nour_ELHADJ-MIMOUNE.pdf).
+Le détail complet des compétences est disponible sur le [portfolio](https://nourelislm93700.github.io/My-Portfolio) et dans le [CV](./CV_Nour_ELHADJ-MIMOUNE.pdf).
 
 ## Projets
 
@@ -39,22 +41,22 @@ Le détail complet des compétences est disponible sur le [portfolio](https://no
 
 ## Expérience professionnelle
 
-- **Développeur Full-Stack** — LyeSmarTeck, Paris (mai à juillet 2025)
-- **Développeur Web** — Air France, Tremblay-en-France (juillet à septembre 2024)
-- **Data Analyst** — RATP Dev El Djazaïr, Alger (juin à août 2023)
+- **Développeur Full-Stack**, LyeSmarTeck, Paris (mai à juillet 2025)
+- **Développeur Web**, Air France, Tremblay-en-France (juillet à septembre 2024)
+- **Data Analyst**, RATP Dev El Djazaïr, Alger (juin à août 2023)
 
 ## Formation
 
-- Master 2 MIAGE, SI Fiables et Intelligence des Données — Université Paris Nanterre (2026-2027, alternance)
-- Master 1 MIAGE — Université Paris Nanterre (2025-2026)
-- Licence MIASHS, parcours MIAGE — Université Paris Nanterre (2023-2025)
-- Licence 1 MIE — Université d'Orléans (2022-2023)
+- Master 2 MIAGE, SI Fiables et Intelligence des Données, Université Paris Nanterre (2026-2027, alternance)
+- Master 1 MIAGE, Université Paris Nanterre (2025-2026)
+- Licence MIASHS, parcours MIAGE, Université Paris Nanterre (2023-2025)
+- Licence 1 MIE, Université d'Orléans (2022-2023)
 
 ## Documents
 
 - [CV (PDF)](./CV_Nour_ELHADJ-MIMOUNE.pdf)
 - [Calendrier de formation Master 2 (PDF)](./Calendrier_Formation_MIAGE_2026-2027.pdf)
-- [Rapport Power BI — Tarifs TGV (PDF)](./Etude_Tarifs_TGV_PowerBI.pdf)
+- [Rapport Power BI, tarifs TGV (PDF)](./Etude_Tarifs_TGV_PowerBI.pdf)
 
 ## Contact
 

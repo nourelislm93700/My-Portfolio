@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour ELHADJ-MIMOUNE - Portfolio</title>
+<meta name="description" content="Portfolio de Nour ELHADJ-MIMOUNE, Alternant MIAGE, Développeur Full-Stack & Data Analyst">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  :root{
+    --bg:#070b14;
+    --bg-soft:#0b111d;
+    --card:#0f1826;
+    --card-hover:#131f30;
+    --border:rgba(255,255,255,.08);
+    --border-hover:rgba(34,211,238,.35);
+    --text:#e8edf6;
+    --text-dim:#8b97ab;
+    --text-dimmer:#5c6a80;
+    --accent:#22d3ee;
+    --accent2:#a78bfa;
+    --accent3:#f472b6;
+    --grad:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%);
+    --grad-soft:linear-gradient(135deg,rgba(34,211,238,.12),rgba(167,139,250,.12));
+    --radius:16px;
+    --maxw:1120px;
+    --ff-head:'Space Grotesk',sans-serif;
+    --ff-body:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--ff-body);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  body.en .fr-only{display:none !important;}
+  body:not(.en) .en-only{display:none !important;}
+
+  ::selection{background:rgba(34,211,238,.3);color:#fff;}
+
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* background ambience */
+  .bg-glow{
+    position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  }
+  .bg-glow span{
+    position:absolute;border-radius:50%;filter:blur(120px);opacity:.28;
+    animation:float 22s ease-in-out infinite;
+  }
+  .bg-glow span:nth-child(1){width:520px;height:520px;background:#22d3ee;top:-160px;left:-120px;animation-delay:0s;}
+  .bg-glow span:nth-child(2){width:480px;height:480px;background:#a78bfa;top:20%;right:-160px;animation-delay:-7s;}
+  .bg-glow span:nth-child(3){width:420px;height:420px;background:#f472b6;bottom:-140px;left:30%;animation-delay:-14s;}
+  @keyframes float{
+    0%,100%{transform:translate(0,0) scale(1);}
+    33%{transform:translate(40px,-30px) scale(1.08);}
+    66%{transform:translate(-30px,20px) scale(.95);}
+  }
+  .noise{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:26px 26px;
+  }
+
+  main, header, footer{position:relative;z-index:1;}
+
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    backdrop-filter:blur(14px);
+    background:rgba(7,11,20,.65);
+    border-bottom:1px solid var(--border);
+    transition:border-color .3s;
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:var(--maxw);margin:0 auto;padding:16px 28px;
+  }
+  .logo{
+    font-family:var(--ff-head);font-weight:700;font-size:1.15rem;letter-spacing:.02em;
+    display:flex;align-items:center;gap:8px;
+  }
+  .logo .dot{
+    width:9px;height:9px;border-radius:50%;background:var(--grad);
+    box-shadow:0 0 12px #22d3ee;
+  }
+  .nav-links{display:flex;gap:1.8rem;align-items:center;}
+  .nav-links a{
+    font-size:.9rem;color:var(--text-dim);font-weight:500;
+    position:relative;padding:4px 0;transition:color .25s;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;
+    background:var(--grad);transition:width .3s;
+  }
+  .nav-links a:hover{color:var(--text);}
+  .nav-links a:hover::after{width:100%;}
+
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .lang-toggle{
+    display:flex;border:1px solid var(--border);border-radius:999px;padding:3px;gap:2px;
+    background:rgba(255,255,255,.02);
+  }
+  .lang-toggle button{
+    border:none;background:transparent;color:var(--text-dim);font-family:var(--ff-body);
+    font-weight:600;font-size:.76rem;padding:5px 12px;border-radius:999px;cursor:pointer;
+    transition:all .25s;
+  }
+  .lang-toggle button.active{background:var(--grad);color:#04121a;}
+
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+  .burger span{width:22px;height:2px;background:var(--text);border-radius:2px;}
+
+  /* BUTTONS */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:12px 24px;border-radius:999px;font-weight:600;font-size:.92rem;
+    cursor:pointer;border:1px solid transparent;transition:all .25s;
+    font-family:var(--ff-body);
+  }
+  .btn i{font-size:.86em;}
+  .btn-primary{background:var(--grad);color:#04121a;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(34,211,238,.5);}
+  .btn-ghost{background:rgba(255,255,255,.03);border-color:var(--border);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--border-hover);background:rgba(255,255,255,.06);transform:translateY(-2px);}
+  .btn-sm{padding:8px 16px;font-size:.82rem;}
+
+  /* SECTION helpers */
+  section{padding:120px 0 40px;}
+  section:first-of-type{padding-top:180px;}
+  .eyebrow{
+    font-family:var(--ff-head);text-transform:uppercase;letter-spacing:.18em;
+    font-size:.76rem;color:var(--accent);font-weight:600;margin-bottom:14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:'';width:26px;height:1px;background:var(--accent);}
+  h2.title{
+    font-family:var(--ff-head);font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700;
+    margin-bottom:14px;letter-spacing:-.01em;
+  }
+  .subtitle{color:var(--text-dim);font-size:1.02rem;max-width:640px;margin-bottom:56px;}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;padding-top:100px;
+  }
+  .hero-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;width:100%;}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:9px;
+    border:1px solid var(--border);border-radius:999px;padding:7px 16px;
+    font-size:.82rem;color:var(--text-dim);margin-bottom:28px;background:rgba(255,255,255,.02);
+  }
+  .hero-tag .pulse{
+    width:7px;height:7px;border-radius:50%;background:#4ade80;
+    box-shadow:0 0 0 rgba(74,222,128,.6);animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(74,222,128,.55);}
+    70%{box-shadow:0 0 0 9px rgba(74,222,128,0);}
+    100%{box-shadow:0 0 0 0 rgba(74,222,128,0);}
+  }
+  .hero h1{
+    font-family:var(--ff-head);font-weight:700;
+    font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1.05;letter-spacing:-.02em;
+    margin-bottom:18px;
+  }
+  .hero h1 .grad{
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero-role{
+    font-family:var(--ff-head);font-size:clamp(1.15rem,2.4vw,1.6rem);color:var(--accent);
+    font-weight:600;min-height:2.4rem;margin-bottom:24px;display:flex;align-items:center;
+  }
+  .hero-role .cursor{
+    display:inline-block;width:2px;height:1.2em;background:var(--accent);margin-left:3px;
+    animation:blink 1s step-start infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  .hero p.lead{color:var(--text-dim);font-size:1.08rem;max-width:620px;margin-bottom:38px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px;}
+  .scroll-cue{
+    display:flex;align-items:center;gap:10px;color:var(--text-dimmer);font-size:.8rem;
+  }
+  .scroll-cue .line{width:1px;height:34px;background:linear-gradient(var(--text-dimmer),transparent);
+    animation:scrolldown 1.8s ease-in-out infinite;}
+  @keyframes scrolldown{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start;}
+  .about-text p{color:var(--text-dim);font-size:1.02rem;margin-bottom:20px;}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;}
+  .fact{
+    border:1px solid var(--border);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.02);
+    transition:border-color .25s, transform .25s;
+  }
+  .fact:hover{border-color:var(--border-hover);transform:translateY(-3px);}
+  .fact .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dimmer);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+  .fact .v{font-size:.92rem;font-weight:600;}
+  .interests{display:flex;flex-direction:column;gap:14px;}
+  .interest-card{
+    border:1px solid var(--border);border-radius:14px;padding:18px 20px;
+    background:var(--card);display:flex;align-items:center;gap:14px;
+    transition:transform .25s, border-color .25s;
+  }
+  .interest-card:hover{transform:translateX(6px);border-color:var(--border-hover);}
+  .interest-card .ic{
+    width:42px;height:42px;border-radius:10px;background:var(--grad-soft);
+    display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;color:var(--accent);
+  }
+  .interest-card .txt div:first-child{font-weight:600;font-size:.94rem;}
+  .interest-card .txt div:last-child{color:var(--text-dimmer);font-size:.78rem;}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .skill-card{
+    border:1px solid var(--border);border-radius:var(--radius);padding:26px;
+    background:var(--card);transition:transform .3s, border-color .3s, background .3s;
+  }
+  .skill-card:hover{transform:translateY(-6px);border-color:var(--border-hover);background:var(--card-hover);}
+  .skill-card .icon{
+    width:44px;height:44px;border-radius:12px;background:var(--grad-soft);
+    display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:16px;color:var(--accent);
+  }
+  .skill-card h3{font-family:var(--ff-head);font-size:1.06rem;margin-bottom:6px;}
+  .skill-card .skill-desc{color:var(--text-dimmer);font-size:.8rem;margin-bottom:14px;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{
+    font-size:.78rem;padding:6px 12px;border-radius:999px;border:1px solid var(--border);
+    color:var(--text-dim);background:rgba(255,255,255,.02);transition:all .25s;
+  }
+  .tag:hover{border-color:var(--accent);color:var(--text);transform:translateY(-2px);}
+
+  /* TIMELINE */
+  .timeline{position:relative;padding-left:36px;}
+  .timeline::before{
+    content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1px;
+    background:linear-gradient(var(--accent),var(--accent2),transparent);
+  }
+  .tl-item{position:relative;padding-bottom:44px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{
+    position:absolute;left:-36px;top:4px;width:26px;height:26px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(34,211,238,.12);
+    display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--accent);
+    transform:translateX(-6px);
+  }
+  .tl-card{
+    border:1px solid var(--border);border-radius:14px;padding:22px 24px;background:var(--card);
+    transition:border-color .25s, transform .25s;
+  }
+  .tl-card:hover{border-color:var(--border-hover);transform:translateY(-3px);}
+  .tl-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
+  .tl-role{font-family:var(--ff-head);font-weight:600;font-size:1.05rem;}
+  .tl-company{color:var(--accent);font-size:.88rem;font-weight:600;}
+  .tl-period{
+    font-size:.76rem;color:var(--text-dimmer);border:1px solid var(--border);border-radius:999px;
+    padding:4px 12px;white-space:nowrap;
+  }
+  .tl-card ul{color:var(--text-dim);font-size:.92rem;display:flex;flex-direction:column;gap:8px;}
+  .tl-card ul li{position:relative;padding-left:18px;}
+  .tl-card ul li::before{content:'\f105';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;color:var(--accent);font-size:.78em;top:.15em;}
+  .tl-note{margin-top:12px;padding-top:12px;border-top:1px dashed var(--border);color:var(--text-dimmer);font-size:.82rem;display:flex;gap:8px;align-items:flex-start;}
+  .tl-note i{color:var(--accent2);margin-top:3px;}
+
+  .timeline.alt::before{background:linear-gradient(var(--accent3),var(--accent2),transparent);}
+  .timeline.alt .tl-dot{border-color:var(--accent3);box-shadow:0 0 0 4px rgba(244,114,182,.12);color:var(--accent3);}
+  .timeline.alt .tl-card ul li::before{color:var(--accent3);}
+  .timeline.alt .tl-company{color:var(--accent3);}
+
+  /* PROJECTS */
+  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
+  .proj-card{
+    border:1px solid var(--border);border-radius:var(--radius);padding:28px;background:var(--card);
+    display:flex;flex-direction:column;gap:16px;transition:transform .3s, border-color .3s, background .3s;
+    position:relative;overflow:hidden;
+  }
+  .proj-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);
+    transform:scaleX(0);transform-origin:left;transition:transform .4s;
+  }
+  .proj-card:hover::before{transform:scaleX(1);}
+  .proj-card:hover{transform:translateY(-6px);border-color:var(--border-hover);background:var(--card-hover);}
+  .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+  .proj-badge{
+    font-family:var(--ff-head);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent2);font-weight:700;display:flex;align-items:center;gap:7px;
+  }
+  .proj-card h3{font-family:var(--ff-head);font-size:1.25rem;font-weight:700;}
+  .proj-card p{color:var(--text-dim);font-size:.92rem;}
+  .proj-links{display:flex;gap:10px;flex-wrap:wrap;}
+  .proj-links a{
+    display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;
+    color:var(--text);border:1px solid var(--border);padding:8px 14px;border-radius:999px;
+    transition:all .25s;
+  }
+  .proj-links a:hover{border-color:var(--accent);color:var(--accent);gap:10px;}
+  .proj-highlights{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:2px;}
+  .proj-highlights li{
+    font-size:.86rem;color:var(--text-dim);padding-left:20px;position:relative;
+  }
+  .proj-highlights li::before{content:'\f105';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;top:.1em;color:var(--accent2);font-size:.85em;}
+  .proj-featured{grid-column:1/-1;}
+  .collab-note{font-size:.78rem;color:var(--text-dimmer);display:flex;align-items:center;gap:7px;}
+
+  .other-projects{display:grid;grid-template-columns:1fr;gap:16px;}
+  .mini-proj{
+    border:1px dashed var(--border);border-radius:14px;padding:20px 22px;
+    display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;
+    transition:border-color .25s;
+  }
+  .mini-proj:hover{border-color:var(--border-hover);}
+  .mini-proj .mp-icon{
+    width:38px;height:38px;border-radius:10px;background:var(--grad-soft);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;
+  }
+  .mini-proj h4{font-family:var(--ff-head);font-size:1rem;margin-bottom:6px;}
+  .mini-proj p{color:var(--text-dimmer);font-size:.86rem;max-width:600px;}
+
+  /* CONTACT */
+  .contact-box{
+    border:1px solid var(--border);border-radius:24px;padding:64px 48px;text-align:center;
+    background:radial-gradient(circle at 50% 0%, rgba(34,211,238,.08), transparent 60%), var(--card);
+    position:relative;overflow:hidden;
+  }
+  .contact-box h2{font-family:var(--ff-head);font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:14px;}
+  .contact-box p{color:var(--text-dim);margin-bottom:34px;}
+  .contact-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+  .contact-meta{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;color:var(--text-dimmer);font-size:.86rem;}
+  .contact-meta a, .contact-meta span{display:flex;align-items:center;gap:8px;}
+  .contact-meta a{color:var(--text-dim);transition:color .25s;}
+  .contact-meta a:hover{color:var(--accent);}
+
+  footer{padding:40px 0;border-top:1px solid var(--border);margin-top:80px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;color:var(--text-dimmer);font-size:.82rem;}
+  .footer-inner .socials{display:flex;gap:16px;}
+  .footer-inner .socials a{color:var(--text-dim);transition:color .25s;display:flex;align-items:center;gap:6px;}
+  .footer-inner .socials a:hover{color:var(--accent);}
+
+  @media (max-width:920px){
+    .about-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr 1fr;}
+    .proj-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .nav-links{position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg-soft);
+      flex-direction:column;justify-content:flex-start;padding:40px 28px;gap:22px;
+      transform:translateX(100%);transition:transform .35s ease;z-index:99;}
+    .nav-links.open{transform:translateX(0);}
+    .burger{display:flex;}
+    .skills-grid{grid-template-columns:1fr;}
+    .facts{grid-template-columns:1fr;}
+    section{padding:90px 0 20px;}
+    .contact-box{padding:44px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-glow"><span></span><span></span><span></span></div>
+<div class="noise"></div>
+
+<header>
+  <nav>
+    <a href="#home" class="logo"><span class="dot"></span>NE.</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="fr-only">Accueil</a><a href="#home" class="en-only">Home</a></li>
+      <li><a href="#about" class="fr-only">À propos</a><a href="#about" class="en-only">About</a></li>
+      <li><a href="#skills" class="fr-only">Compétences</a><a href="#skills" class="en-only">Skills</a></li>
+      <li><a href="#experience" class="fr-only">Expérience</a><a href="#experience" class="en-only">Experience</a></li>
+      <li><a href="#projects" class="fr-only">Projets</a><a href="#projects" class="en-only">Projects</a></li>
+      <li><a href="#contact" class="fr-only">Contact</a><a href="#contact" class="en-only">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button id="btnFr" class="active">FR</button>
+        <button id="btnEn">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-tag"><span class="pulse"></span>
+        <span class="fr-only">Recherche alternance M2, rythme 3 semaines / 3 semaines, dès septembre 2026</span>
+        <span class="en-only">Looking for a work-study contract, 3 weeks / 3 weeks schedule, starting September 2026</span>
+      </div>
+      <h1>
+        <span class="fr-only">Bonjour, je suis<br><span class="grad">Nour ELHADJ-MIMOUNE</span></span>
+        <span class="en-only">Hi, I'm<br><span class="grad">Nour ELHADJ-MIMOUNE</span></span>
+      </h1>
+      <div class="hero-role"><span id="typedText"></span><span class="cursor"></span></div>
+      <p class="lead fr-only">Étudiant en Master MIAGE (spécialité Systèmes d'Information Fiables et Intelligence des Données) à l'Université Paris Nanterre, je conçois des applications web et je transforme des données complexes en tableaux de bord clairs. En parallèle de mes études, j'ai aussi tenu deux emplois de terrain qui m'ont appris la rigueur, le contact client et la gestion d'un planning serré. Je cherche une alternance où mettre ces deux facettes au service d'une équipe.</p>
+      <p class="lead en-only">A Master's student in Information Systems (MIAGE, specializing in Reliable Information Systems and Data Intelligence) at Université Paris Nanterre, I build web applications and turn complex data into clear dashboards. Alongside my studies, I also held two customer-facing jobs that taught me discipline, client contact and how to manage a tight schedule. I'm looking for a work-study role where I can put both sides to work for a team.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-folder-open"></i>
+          <span class="fr-only">Voir mes projets</span><span class="en-only">View my projects</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="fr-only">Me contacter</span><span class="en-only">Get in touch</span>
+        </a>
+        <a href="CV_Nour_ELHADJ-MIMOUNE.pdf" download class="btn btn-ghost">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span class="fr-only">Télécharger mon CV</span><span class="en-only">Download my CV</span>
+        </a>
+      </div>
+      <div class="scroll-cue"><div class="line"></div>
+        <span class="fr-only">Défiler</span><span class="en-only">Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="eyebrow fr-only">Qui suis-je</div>
+      <div class="eyebrow en-only">Who I am</div>
+      <h2 class="title reveal fr-only">À propos de moi</h2>
+      <h2 class="title reveal en-only">About me</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="fr-only">Je suis miagiste, ce qui veut dire que je navigue entre deux mondes : celui du développement et celui de la gestion de projet informatique. Mes stages chez LyeSmarTeck, Air France et RATP Dev m'ont donné l'occasion de développer des applications de bout en bout et d'analyser des données d'exploitation à fort volume, avec à chaque fois des contraintes réelles de production à respecter.</p>
+          <p class="fr-only">Ce qui me distingue peut-être un peu, c'est que j'ai financé une bonne partie de mes études en travaillant en parallèle, comme hôte d'accueil à la RATP puis comme chef de rang au Café Beaubourg. Ça n'a rien à voir avec l'informatique, mais ça m'a obligé à tenir un planning serré entre cours, projets et service, et ça m'a appris des choses qu'on n'apprend pas derrière un écran : le sang-froid face à un client mécontent, la rigueur quand il faut aller vite, et le sens du collectif en équipe.</p>
+          <p class="fr-only">Aujourd'hui je termine mon Master 1 et je cherche une alternance en Master 2 à partir de septembre 2026, pour continuer à construire mon profil autour de l'architecture des systèmes d'information, de la donnée et, de plus en plus, de l'intelligence artificielle.</p>
+          <p class="en-only">I'm an Information Systems student, which means I move between two worlds: software development and IT project management. My internships at LyeSmarTeck, Air France and RATP Dev gave me the chance to build applications end to end and to analyze large-scale operational data, always under real production constraints.</p>
+          <p class="en-only">What sets me apart a little is that I funded a good part of my studies by working on the side, first as a reception host at RATP, then as a floor supervisor at Café Beaubourg. It has nothing to do with software, but it forced me to hold a tight schedule between classes, projects and shifts, and it taught me things you don't learn behind a screen: staying calm with an unhappy customer, working fast without cutting corners, and pulling as a team.</p>
+          <p class="en-only">I'm currently finishing my first year of Master's and looking for a work-study contract for my second year starting September 2026, to keep building my profile around IT architecture, data and, increasingly, artificial intelligence.</p>
+          <div class="facts">
+            <div class="fact"><div class="k"><i class="fa-solid fa-location-dot"></i><span class="fr-only">Localisation</span><span class="en-only">Location</span></div><div class="v">Paris, Île-de-France</div></div>
+            <div class="fact"><div class="k"><i class="fa-solid fa-graduation-cap"></i><span class="fr-only">Formation visée</span><span class="en-only">Target program</span></div><div class="v">Master 2 MIAGE · SIFID · 2026-2027</div></div>
+            <div class="fact"><div class="k"><i class="fa-solid fa-language"></i><span class="fr-only">Langues</span><span class="en-only">Languages</span></div><div class="v fr-only">Français, anglais courant</div><div class="v en-only">French, fluent English</div></div>
+            <div class="fact"><div class="k"><i class="fa-solid fa-calendar-check"></i><span class="fr-only">Rythme</span><span class="en-only">Schedule</span></div><div class="v fr-only">3 semaines / 3 semaines</div><div class="v en-only">3 weeks / 3 weeks</div></div>
+          </div>
+        </div>
+        <div class="interests reveal">
+          <div class="interest-card">
+            <div class="ic"><i class="fa-solid fa-city"></i></div>
+            <div class="txt">
+              <div class="fr-only">Développement urbain</div><div class="en-only">Urban development</div>
+              <div class="fr-only">Villes intelligentes et mobilité</div><div class="en-only">Smart cities and mobility</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="ic"><i class="fa-solid fa-rocket"></i></div>
+            <div class="txt">
+              <div class="fr-only">Aviation et espace</div><div class="en-only">Aviation and space</div>
+              <div class="fr-only">Sciences et innovations spatiales</div><div class="en-only">Space science and innovation</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="ic"><i class="fa-solid fa-dumbbell"></i></div>
+            <div class="txt">
+              <div class="fr-only">Sport</div><div class="en-only">Sport</div>
+              <div class="fr-only">Musculation et discipline</div><div class="en-only">Strength training and discipline</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="eyebrow fr-only">Boîte à outils</div>
+      <div class="eyebrow en-only">Toolbox</div>
+      <h2 class="title reveal fr-only">Compétences</h2>
+      <h2 class="title reveal en-only">Skills</h2>
+      <p class="subtitle reveal fr-only">Un socle technique polyvalent, de la donnée au code, complété par les méthodes et référentiels vus en Master MIAGE.</p>
+      <p class="subtitle reveal en-only">A versatile technical foundation, from data to code, backed by the methods and frameworks covered during my MIAGE Master's.</p>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-chart-column"></i></div>
+          <h3>Data & Analytics</h3>
+          <p class="skill-desc fr-only">Traitement et visualisation de données</p>
+          <p class="skill-desc en-only">Data processing and visualization</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+            <span class="tag">Matplotlib</span><span class="tag">SQL</span><span class="tag">Power BI</span>
+            <span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Data Analytics</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="fr-only">Langages & Frameworks</h3><h3 class="en-only">Languages & Frameworks</h3>
+          <p class="skill-desc fr-only">Développement front-end et back-end</p>
+          <p class="skill-desc en-only">Front-end and back-end development</p>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">JavaScript</span>
+            <span class="tag">PHP</span><span class="tag">HTML / CSS</span><span class="tag">SAS</span><span class="tag">API REST</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-toolbox"></i></div>
+          <h3 class="fr-only">Outils & Environnements</h3><h3 class="en-only">Tools & Environments</h3>
+          <p class="skill-desc fr-only">Environnement de travail quotidien</p>
+          <p class="skill-desc en-only">Day-to-day work environment</p>
+          <div class="tags">
+            <span class="tag">Git</span><span class="tag">Visual Studio</span><span class="tag">IntelliJ IDEA</span>
+            <span class="tag fr-only">Excel avancé</span><span class="tag en-only">Advanced Excel</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3 class="fr-only">Méthodes & Cadrage</h3><h3 class="en-only">Methods & Scoping</h3>
+          <p class="skill-desc fr-only">Cadrer et cadencer un projet IT</p>
+          <p class="skill-desc en-only">Scoping and running an IT project</p>
+          <div class="tags">
+            <span class="tag">Agile / Scrum</span><span class="tag">Scrum Master</span><span class="tag">Product Owner</span>
+            <span class="tag">Sprint</span><span class="tag">Kanban</span><span class="tag">User Stories</span>
+            <span class="tag fr-only">Cadrage du besoin</span><span class="tag en-only">Needs Scoping</span>
+            <span class="tag fr-only">Spécifications fonctionnelles</span><span class="tag en-only">Functional Specs</span>
+            <span class="tag fr-only">Cahier des charges</span><span class="tag en-only">Requirements Doc</span>
+            <span class="tag fr-only">Recette fonctionnelle</span><span class="tag en-only">Functional Testing</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-people-arrows"></i></div>
+          <h3 class="fr-only">Pilotage & Management</h3><h3 class="en-only">Steering & Management</h3>
+          <p class="skill-desc fr-only">Piloter budget, risques et parties prenantes</p>
+          <p class="skill-desc en-only">Steering budget, risk and stakeholders</p>
+          <div class="tags">
+            <span class="tag fr-only">Gestion de projet</span><span class="tag en-only">Project Management</span>
+            <span class="tag fr-only">Pilotage de budget</span><span class="tag en-only">Budget Steering</span>
+            <span class="tag fr-only">Diagramme de Gantt</span><span class="tag en-only">Gantt Chart</span>
+            <span class="tag">Roadmap</span>
+            <span class="tag fr-only">Management transversal</span><span class="tag en-only">Cross-team Management</span>
+            <span class="tag fr-only">Conduite du changement</span><span class="tag en-only">Change Management</span>
+            <span class="tag fr-only">Gestion des risques</span><span class="tag en-only">Risk Management</span>
+            <span class="tag">KPI</span><span class="tag">Reporting</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="fr-only">Architecture & Gouvernance SI</h3><h3 class="en-only">IS Architecture & Governance</h3>
+          <p class="skill-desc fr-only">Structurer et sécuriser le système d'information</p>
+          <p class="skill-desc en-only">Structuring and securing the IS</p>
+          <div class="tags">
+            <span class="tag fr-only">Architecture SI</span><span class="tag en-only">IS Architecture</span>
+            <span class="tag fr-only">Gouvernance SI</span><span class="tag en-only">IS Governance</span>
+            <span class="tag fr-only">Urbanisation des SI</span><span class="tag en-only">IS Urbanization</span>
+            <span class="tag fr-only">Transformation digitale</span><span class="tag en-only">Digital Transformation</span>
+            <span class="tag">AMOA</span><span class="tag">RGPD</span>
+            <span class="tag fr-only">Cybersécurité</span><span class="tag en-only">Cybersecurity</span>
+            <span class="tag">UML</span><span class="tag">BPMN</span><span class="tag">Merise</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-database"></i></div>
+          <h3 class="fr-only">BI, Cloud & Outils métier</h3><h3 class="en-only">BI, Cloud & Business Tools</h3>
+          <p class="skill-desc fr-only">De l'analyse à l'infrastructure</p>
+          <p class="skill-desc en-only">From analytics to infrastructure</p>
+          <div class="tags">
+            <span class="tag">Business Intelligence</span><span class="tag fr-only">Big Data</span><span class="tag en-only">Big Data</span>
+            <span class="tag fr-only">Cloud Computing</span><span class="tag en-only">Cloud Computing</span>
+            <span class="tag">SaaS</span><span class="tag">ERP</span><span class="tag">SAP</span><span class="tag">CRM</span><span class="tag">Salesforce</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-award"></i></div>
+          <h3 class="fr-only">Référentiels & Méthodes</h3><h3 class="en-only">Frameworks & Standards</h3>
+          <p class="skill-desc fr-only">Cadres vus en formation MIAGE</p>
+          <p class="skill-desc en-only">Frameworks covered in the MIAGE program</p>
+          <div class="tags">
+            <span class="tag">PMBOK</span><span class="tag">PRINCE2</span><span class="tag">ITIL</span>
+            <span class="tag">SAFe</span><span class="tag">LEAN Six Sigma</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><i class="fa-solid fa-comments"></i></div>
+          <h3 class="fr-only">Relation client & Communication</h3><h3 class="en-only">Client Relations & Communication</h3>
+          <p class="skill-desc fr-only">Développées aussi sur le terrain, hors informatique</p>
+          <p class="skill-desc en-only">Also built off-screen, outside of IT</p>
+          <div class="tags">
+            <span class="tag fr-only">Relation client</span><span class="tag en-only">Client Relations</span>
+            <span class="tag fr-only">Gestion des prestataires</span><span class="tag en-only">Vendor Management</span>
+            <span class="tag">Sourcing</span><span class="tag">SLA</span>
+            <span class="tag fr-only">Animation de réunions</span><span class="tag en-only">Meeting Facilitation</span>
+            <span class="tag fr-only">Alignement stratégique</span><span class="tag en-only">Strategic Alignment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="eyebrow fr-only">Parcours professionnel</div>
+      <div class="eyebrow en-only">Professional background</div>
+      <h2 class="title reveal fr-only">Expérience en systèmes d'information</h2>
+      <h2 class="title reveal en-only">Information Systems Experience</h2>
+      <p class="subtitle reveal fr-only">Trois stages, trois secteurs différents : l'énergie, le transport aérien et le transport ferroviaire.</p>
+      <p class="subtitle reveal en-only">Three internships, three different industries: energy, air transport and rail transport.</p>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-code"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role fr-only">Développeur Full-Stack (Front-End & Back-End)</div>
+                <div class="tl-role en-only">Full-Stack Developer (Front-End & Back-End)</div>
+                <div class="tl-company">LyeSmarTeck · Paris</div>
+              </div>
+              <div class="tl-period fr-only">Mai 2025 à Juillet 2025</div>
+              <div class="tl-period en-only">May 2025 to July 2025</div>
+            </div>
+            <ul>
+              <li class="fr-only">Conception d'applications web de bout en bout pour une entreprise de services électriques, dans le respect des contraintes de production fixées par l'équipe technique.</li>
+              <li class="en-only">End-to-end design of web applications for an electrical services company, in line with the production constraints set by the technical team.</li>
+              <li class="fr-only">Développement d'ELEKWAN, une application de réseau social interne, avec authentification sécurisée et modélisation complète de la base de données.</li>
+              <li class="en-only">Built ELEKWAN, an internal social network application, including a secure authentication system and a full database model.</li>
+              <li class="fr-only">Autonomie quasi totale sur ce projet : de la conception de l'architecture jusqu'aux tests avant mise en production.</li>
+              <li class="en-only">Near full autonomy on this project, from the architecture design through to testing before production.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-plane"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role fr-only">Développeur Web</div>
+                <div class="tl-role en-only">Web Developer</div>
+                <div class="tl-company">Air France · Tremblay-en-France</div>
+              </div>
+              <div class="tl-period fr-only">Juillet 2024 à Septembre 2024</div>
+              <div class="tl-period en-only">July 2024 to September 2024</div>
+            </div>
+            <ul>
+              <li class="fr-only">Maintenance et amélioration de l'interface utilisateur des sites de réservation en ligne.</li>
+              <li class="en-only">Maintained and improved the user interface of online booking platforms.</li>
+              <li class="fr-only">Ajustement et optimisation des parcours de réservation pour fluidifier l'expérience utilisateur.</li>
+              <li class="en-only">Adjusted and optimized booking flows to smooth out the user experience.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role">Data Analyst</div>
+                <div class="tl-company fr-only">RATP Dev El Djazaïr · Alger</div>
+                <div class="tl-company en-only">RATP Dev El Djazaïr · Algiers</div>
+              </div>
+              <div class="tl-period fr-only">Juin 2023 à Août 2023</div>
+              <div class="tl-period en-only">June 2023 to August 2023</div>
+            </div>
+            <ul>
+              <li class="fr-only">Analyse de données d'exploitation volumineuses (ponctualité, flux voyageurs, incidents) pour identifier des axes d'amélioration du réseau.</li>
+              <li class="en-only">Analyzed large-scale operational data (punctuality, passenger flow, incidents) to identify network improvement areas.</li>
+              <li class="fr-only">Création de dashboards et de rapports de suivi des indicateurs de performance (KPI) pour les équipes d'exploitation.</li>
+              <li class="en-only">Built dashboards and reports to track key performance indicators (KPIs) for the operations teams.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE HORS DOMAINE -->
+  <section id="side-experience">
+    <div class="wrap">
+      <div class="eyebrow fr-only">À côté des études</div>
+      <div class="eyebrow en-only">Alongside my studies</div>
+      <h2 class="title reveal fr-only">Expérience hors domaine</h2>
+      <h2 class="title reveal en-only">Experience beyond tech</h2>
+      <p class="subtitle reveal fr-only">En parallèle de mes stages en systèmes d'information, j'ai occupé deux emplois de terrain, sans lien direct avec l'informatique. Ils m'ont surtout appris à gérer un emploi du temps chargé entre cours, projets et service, et à travailler des qualités qu'on ne développe pas derrière un écran : sang-froid, ponctualité et sens du contact.</p>
+      <p class="subtitle reveal en-only">Alongside my information systems internships, I held two customer-facing jobs with no direct link to software. They mainly taught me to manage a packed schedule between classes, projects and shifts, and to build qualities you don't develop behind a screen: composure, punctuality and people skills.</p>
+
+      <div class="timeline alt">
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-mug-saucer"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role fr-only">Chef de rang</div>
+                <div class="tl-role en-only">Floor Supervisor / Head Waiter</div>
+                <div class="tl-company">Café Beaubourg · Paris</div>
+              </div>
+              <div class="tl-period fr-only">Septembre 2024 à Juin 2026</div>
+              <div class="tl-period en-only">September 2024 to June 2026</div>
+            </div>
+            <ul>
+              <li class="fr-only">Service en salle dans un établissement à forte affluence, accueil et conseil client, prise de commandes et encaissement.</li>
+              <li class="en-only">Floor service in a high-traffic venue, greeting and advising customers, taking orders and handling payments.</li>
+              <li class="fr-only">Coordination avec la cuisine et le reste de l'équipe pendant les coups de feu, pour garder un service fluide même sous pression.</li>
+              <li class="en-only">Coordinated with the kitchen and the rest of the team during rush hours, to keep service smooth even under pressure.</li>
+              <li class="fr-only">Formation et accompagnement des nouveaux serveurs sur les standards de la maison.</li>
+              <li class="en-only">Trained and mentored new waitstaff on the venue's service standards.</li>
+            </ul>
+            <div class="tl-note">
+              <i class="fa-solid fa-clock"></i>
+              <span class="fr-only">Poste tenu près de deux ans en parallèle de la Licence puis du Master 1, souvent en horaires de soir et de week-end : une vraie discipline pour concilier cours, projets et service.</span>
+              <span class="en-only">Held for nearly two years alongside my Bachelor's and then my first Master's year, often on evening and weekend shifts, real discipline to juggle classes, projects and service.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-train-subway"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role fr-only">Hôte d'accueil</div>
+                <div class="tl-role en-only">Reception Host</div>
+                <div class="tl-company fr-only">RATP · Île-de-France</div>
+                <div class="tl-company en-only">RATP · Île-de-France</div>
+              </div>
+              <div class="tl-period fr-only">Novembre 2023 à Août 2024</div>
+              <div class="tl-period en-only">November 2023 to August 2024</div>
+            </div>
+            <ul>
+              <li class="fr-only">Accueil et orientation des voyageurs dans les espaces RATP, information sur le réseau et les correspondances.</li>
+              <li class="en-only">Welcomed and guided passengers in RATP facilities, providing information on the network and connections.</li>
+              <li class="fr-only">Gestion des situations d'affluence et de perturbation, avec un contact permanent avec un public très hétérogène.</li>
+              <li class="en-only">Handled crowded and disrupted situations, in constant contact with a very diverse public.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="eyebrow fr-only">Cursus</div>
+      <div class="eyebrow en-only">Academic path</div>
+      <h2 class="title reveal fr-only">Formation</h2>
+      <h2 class="title reveal en-only">Education</h2>
+      <p class="subtitle reveal fr-only">Le Master MIAGE de Nanterre est une formation reconnue depuis plus de 40 ans, à la fois sur le plan universitaire et sur le marché de l'emploi : environ 90 % d'insertion à la sortie et un salaire annuel moyen de 42 K€. Le cursus articule trois familles de compétences : technique (programmation, systèmes, conception), méthodologie et management de projet, et compétences humaines (travail en équipe, compréhension du contexte entreprise).</p>
+      <p class="subtitle reveal en-only">The Nanterre MIAGE Master's has been a recognized program for over 40 years, both academically and on the job market: around 90% of graduates find work, with an average salary of €42K a year. The curriculum blends three skill areas: technical (programming, systems, design), methodology and project management, and human skills (teamwork, understanding business context).</p>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role fr-only">Master 2 MIAGE, spécialité Systèmes d'Information Fiables et Intelligence des Données</div>
+                <div class="tl-role en-only">Master 2 MIAGE, Reliable Information Systems and Data Intelligence</div>
+                <div class="tl-company fr-only">Université Paris Nanterre · CFA numiA</div>
+                <div class="tl-company en-only">Université Paris Nanterre · CFA numiA</div>
+              </div>
+              <div class="tl-period fr-only">Septembre 2026 à Septembre 2027</div>
+              <div class="tl-period en-only">September 2026 to September 2027</div>
+            </div>
+            <ul>
+              <li class="fr-only">Alternance visée, rythme 3 semaines en entreprise / 3 semaines en formation, à partir du 10 septembre 2026.</li>
+              <li class="en-only">Target work-study contract, 3 weeks in company / 3 weeks at school, starting September 10, 2026.</li>
+              <li class="fr-only">Semestre 9 : fiabilité et systèmes répartis, sécurité des systèmes d'information, traitement de données massives, data analytics, architectures des SI complexes, transformation digitale et gouvernance des SI, data mining, droit et données.</li>
+              <li class="en-only">Semester 9: distributed systems reliability, information systems security, massive data processing, data analytics, complex IS architectures, digital transformation and IS governance, data mining, data law.</li>
+              <li class="fr-only">Semestre 10 : applications du machine learning, projet systèmes d'information et données, mémoire de recherche et soutenance de stage.</li>
+              <li class="en-only">Semester 10: machine learning applications, information systems and data project, research dissertation and internship defense.</li>
+              <li class="fr-only">Projet collaboratif : entrepreneuriat et création d'entreprise.</li>
+              <li class="en-only">Collaborative project: entrepreneurship and business creation.</li>
+            </ul>
+            <div class="tl-note">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="fr-only">Calendrier officiel de la formation (CFA numiA, session 2026-2027) disponible en téléchargement.</span>
+              <span class="en-only">Official training calendar (CFA numiA, 2026-2027 session) available to download.</span>
+            </div>
+            <div class="proj-links" style="margin-top:14px;">
+              <a href="Calendrier_Formation_MIAGE_2026-2027.pdf" target="_blank" rel="noopener">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span class="fr-only">Télécharger le calendrier de formation</span><span class="en-only">Download the training calendar</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role">Master 1 MIAGE</div>
+                <div class="tl-company">Université Paris Nanterre</div>
+              </div>
+              <div class="tl-period">2025 - 2026</div>
+            </div>
+            <ul>
+              <li class="fr-only">Semestre 7 : bases de données avancées, modélisation architecturale et patrons de conception, programmation concurrente et fonctionnelle, management de projet système d'information, gestion des ressources humaines et systèmes d'information.</li>
+              <li class="en-only">Semester 7: advanced databases, architectural modeling and design patterns, concurrent and functional programming, IT project management, HR and information systems.</li>
+              <li class="fr-only">Semestre 8 : infrastructures virtuelles et conteneurs, optimisation combinatoire, business intelligence, marketing numérique, architectures des systèmes d'information.</li>
+              <li class="en-only">Semester 8: virtual infrastructure and containers, combinatorial optimization, business intelligence, digital marketing, information systems architecture.</li>
+              <li class="fr-only">Projets collaboratifs DevOps 1 et 2, en complément des stages en entreprise et de la soutenance de fin d'année.</li>
+              <li class="en-only">DevOps 1 and 2 collaborative projects, alongside company internships and the end-of-year defense.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role fr-only">Licence 2 / 3 MIASHS, parcours MIAGE</div>
+                <div class="tl-role en-only">Bachelor's (L2/L3) MIASHS, MIAGE track</div>
+                <div class="tl-company">Université Paris Nanterre</div>
+              </div>
+              <div class="tl-period">2023 - 2025</div>
+            </div>
+            <ul>
+              <li class="fr-only">Systèmes d'information, programmation orientée objet, développement web, marketing digital, analyse financière, comptabilité.</li>
+              <li class="en-only">Information systems, object-oriented programming, web development, digital marketing, financial analysis, accounting.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-role fr-only">Licence 1 MIE</div>
+                <div class="tl-role en-only">Bachelor's (L1) MIE</div>
+                <div class="tl-company">Université d'Orléans</div>
+              </div>
+              <div class="tl-period">2022 - 2023</div>
+            </div>
+            <ul>
+              <li class="fr-only">Macroéconomie, systèmes économiques, programmation orientée objet, algèbre, analyse, analyse de marché.</li>
+              <li class="en-only">Macroeconomics, economic systems, object-oriented programming, algebra, calculus, market analysis.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="eyebrow fr-only">Réalisations</div>
+      <div class="eyebrow en-only">Selected work</div>
+      <h2 class="title reveal fr-only">Projets</h2>
+      <h2 class="title reveal en-only">Projects</h2>
+      <p class="subtitle reveal fr-only">Une sélection de projets académiques et professionnels, du développement web à l'analyse de données.</p>
+      <p class="subtitle reveal en-only">A selection of academic and professional projects, from web development to data analysis.</p>
+
+      <div class="proj-grid">
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-badge"><i class="fa-solid fa-bolt"></i><span class="fr-only">Vitrine, stage LyeSmarTeck</span><span class="en-only">Showcase site, LyeSmarTeck internship</span></span>
+          </div>
+          <h3>ELEKWAN</h3>
+          <p class="fr-only">Site vitrine développé pour Wanelec, une entreprise spécialisée dans les travaux d'électricité générale et de rénovation électrique qui intervient auprès des particuliers et des professionnels. Le site présente les services proposés, met en avant les réalisations et intègre un point de contact pour les demandes de devis. Je l'ai réalisé pendant mon stage chez LyeSmarTeck, avec un soin particulier apporté à l'intégration CSS pour donner une image professionnelle et rassurante à l'entreprise.</p>
+          <p class="en-only">Showcase website built for Wanelec, a company specializing in general electrical work and electrical renovation for individuals and businesses. The site presents the services on offer, highlights past projects and includes a contact point for quote requests. I built it during my internship at LyeSmarTeck, with careful CSS work to give the company a professional, trustworthy image.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/nourelislm93700/ELEKWAN" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+              <span class="fr-only">Voir le code</span><span class="en-only">View code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-badge"><i class="fa-solid fa-utensils"></i><span class="fr-only">Projet personnel, restauration</span><span class="en-only">Personal project, hospitality</span></span>
+          </div>
+          <h3>Café Bourgeois</h3>
+          <p class="fr-only">Site web pour Le Bourgeois, un restaurant gastronomique parisien : pages de présentation, réservation de table en ligne, création de compte client et formulaire de contact. J'ai développé le frontend en HTML/CSS/JavaScript ainsi que la partie back-end pour la gestion des comptes clients et des réservations.</p>
+          <p class="en-only">Website for Le Bourgeois, a fine-dining restaurant in Paris: showcase pages, online table booking, customer account creation and a contact form. I built the front-end in HTML/CSS/JavaScript as well as the back-end handling customer accounts and reservations.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/nourelislm93700/Cafe-Bourgeois" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+              <span class="fr-only">Voir le code</span><span class="en-only">View code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-badge"><i class="fa-solid fa-users"></i><span class="fr-only">Projet académique en équipe</span><span class="en-only">Academic team project</span></span>
+          </div>
+          <h3>Bibliothèque IDF, Spring Boot DevOps</h3>
+          <p class="fr-only">Ce projet académique consistait à développer le back-end d'une plateforme de gestion pour la Bibliothèque IDF, en équipe avec Nada Boussetta. J'ai travaillé sur une architecture Java Spring Boot exposant une API REST, avec un système d'échange en temps réel pour notifier les utilisateurs (nouvelle disponibilité, retour de livre) et une gestion de sessions pour distinguer les profils lecteurs et bibliothécaires. La partie la plus technique portait sur les algorithmes de recherche et d'optimisation : il fallait croiser plusieurs bibliothèques du réseau IDF pour retrouver rapidement un livre disponible, en tenant compte de la localisation et du délai de réservation. Le projet intégrait aussi une chaîne DevOps de base, versionning Git et intégration continue, pour fiabiliser les déploiements en équipe.</p>
+          <p class="en-only">This academic project involved building the back-end of a management platform for Bibliothèque IDF, working as a team with Nada Boussetta. I worked on a Java Spring Boot architecture exposing a REST API, with a real-time messaging system to notify users (new availability, book returns) and session management to separate reader and librarian profiles. The most technical part dealt with search and optimization algorithms: the system had to cross-check several libraries in the IDF network to quickly find an available book, factoring in location and reservation delay. The project also included a basic DevOps pipeline, Git versioning and continuous integration, to make team deployments more reliable.</p>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">API REST</span><span class="tag fr-only">Temps réel</span><span class="tag en-only">Real-time</span><span class="tag">MySQL</span><span class="tag">Git</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/nadaBoussetta/devOps" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+              <span class="fr-only">Voir le code</span><span class="en-only">View code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+          <div class="collab-note">
+            <i class="fa-solid fa-user-group"></i>
+            <span class="fr-only">Projet réalisé en équipe avec Nada Boussetta.</span>
+            <span class="en-only">Team project with Nada Boussetta.</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-badge"><i class="fa-solid fa-book"></i><span class="fr-only">Projet académique, POO</span><span class="en-only">Academic project, OOP</span></span>
+          </div>
+          <h3 class="fr-only">Gestion de bibliothèque universitaire</h3>
+          <h3 class="en-only">University Library Management</h3>
+          <p class="fr-only">Application de gestion développée en Java pur avec une approche orientée objet, en amont du projet Bibliothèque IDF. Elle permet de gérer les documents (livres, bandes dessinées), le matériel prêtable (ordinateurs portables) et les adhérents (étudiants, enseignants), avec un suivi complet des emprunts et des retours.</p>
+          <p class="en-only">Management application built in pure Java with an object-oriented approach, an earlier step toward the Bibliothèque IDF project. It handles documents (books, comics), loanable equipment (laptops) and members (students, teachers), with full tracking of loans and returns.</p>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">POO</span><span class="tag fr-only">Algorithmique</span><span class="tag en-only">Algorithm Design</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/nourelislm93700/Projet-POO-gestion-BU" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+              <span class="fr-only">Voir le code</span><span class="en-only">View code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-badge"><i class="fa-solid fa-diagram-project"></i><span class="fr-only">Data Science, Open Data</span><span class="en-only">Data Science, Open Data</span></span>
+          </div>
+          <h3 class="fr-only">Analyse de données sur graphes et IA</h3>
+          <h3 class="en-only">Graph Data and AI Analysis</h3>
+          <p class="fr-only">Ce projet portait sur l'étude de l'expression de gènes chez des souris mutées, à partir d'un jeu de données Open Data conséquent : 771 pathways, 4 980 gènes et 2 121 colonnes. Après une phase de nettoyage et de structuration des données sous Python avec Pandas, j'ai construit un réseau de 731 nœuds et 32 355 arêtes représentant les interactions entre gènes. L'analyse s'est ensuite concentrée sur deux axes : le calcul de métriques de centralité pour repérer les gènes les plus influents dans le réseau, et la détection de communautés pour faire apparaître des groupes de gènes qui interagissent fortement entre eux. Ce projet m'a fait sortir du cadre purement applicatif pour aller vers l'analyse scientifique de données à grande échelle.</p>
+          <p class="en-only">This project studied gene expression in mutated mice, based on a substantial open data set: 771 pathways, 4,980 genes and 2,121 columns. After cleaning and structuring the data in Python with Pandas, I built a network of 731 nodes and 32,355 edges representing gene interactions. The analysis then focused on two angles: computing centrality metrics to spot the most influential genes in the network, and running community detection to surface groups of genes that interact strongly with each other. The project pushed me beyond pure application work into scientific analysis of large-scale data.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NetworkX</span><span class="tag fr-only">Analyse de graphes</span><span class="tag en-only">Graph Analysis</span><span class="tag fr-only">Bio-informatique</span><span class="tag en-only">Bioinformatics</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/nourelislm93700/Projet_open_data" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+              <span class="fr-only">Voir le code</span><span class="en-only">View code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-badge"><i class="fa-solid fa-medal"></i><span class="fr-only">Site vitrine, JO Paris 2024</span><span class="en-only">Showcase site, Paris 2024 Olympics</span></span>
+          </div>
+          <h3 class="fr-only">Guide touristique JO Paris 2024</h3>
+          <h3 class="en-only">Paris 2024 Olympics Tourist Guide</h3>
+          <p class="fr-only">Guide touristique statique construit autour des Jeux Olympiques de Paris 2024 : sites touristiques, restaurants et activités à découvrir, calendrier des épreuves et informations de transport pour se déplacer facilement dans la ville pendant les Jeux.</p>
+          <p class="en-only">Static tourist guide built around the Paris 2024 Olympic Games: places to visit, restaurants and activities, the events calendar and transport information to get around the city easily during the Games.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/nourelislm93700/JO-Paris-2024" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+              <span class="fr-only">Voir le code</span><span class="en-only">View code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card proj-featured reveal">
+          <div class="proj-top">
+            <span class="proj-badge"><i class="fa-solid fa-chart-column"></i>Power BI, Data Visualization</span>
+          </div>
+          <h3 class="fr-only">Étude des tarifs TGV, SNCF (TGV INOUI / OUIGO)</h3>
+          <h3 class="en-only">TGV Fare Study, SNCF (TGV INOUI / OUIGO)</h3>
+          <p class="fr-only">Ce projet Power BI visait à comparer les grilles tarifaires de TGV INOUI, OUIGO et OUIGO Train Classique, à partir du jeu de données officiel publié par la SNCF sur data.gouv.fr, soit 36 349 trajets. La première étape a consisté à nettoyer et structurer les données brutes avec Power Query : correction des types, suppression des colonnes inutiles, remplacement des valeurs incohérentes. J'ai ensuite construit un modèle en étoile avec une table de faits reliée à quatre tables de dimension (gares, transporteurs, classes, profils tarifaires), ce qui a permis de croiser facilement les indicateurs de prix par gare, par transporteur ou par profil tarifaire. Plusieurs tableaux de bord interactifs présentent les résultats : répartition des trajets par transporteur, carte des gares desservies, comparaison des prix moyens minimum et maximum, écarts liés au yield management, et positionnement des trois transporteurs sur la vitesse et le confort.</p>
+          <p class="en-only">This Power BI project set out to compare the fare structures of TGV INOUI, OUIGO and OUIGO Classic, using the official SNCF dataset published on data.gouv.fr, covering 36,349 trips. The first step was cleaning and structuring the raw data with Power Query: fixing data types, removing unnecessary columns, replacing inconsistent values. I then built a star schema with a fact table linked to four dimension tables (stations, carriers, travel class, fare profiles), which made it easy to cross-reference price indicators by station, carrier or fare profile. Several interactive dashboards present the results: trip distribution by carrier, a map of served stations, a comparison of average minimum and maximum prices, gaps tied to yield management, and how the three carriers compare on speed and comfort.</p>
+          <ul class="proj-highlights">
+            <li class="fr-only">TGV INOUI domine le réseau avec 97,79 % des trajets analysés, environ 36 000 sur 36 349.</li>
+            <li class="en-only">TGV INOUI dominates the network with 97.79% of trips analyzed, around 36,000 out of 36,349.</li>
+            <li class="fr-only">Écart moyen entre prix minimum et maximum systématiquement supérieur à 40 euros, ce qui révèle une politique de yield management généralisée chez tous les transporteurs.</li>
+            <li class="en-only">Average gap between minimum and maximum prices consistently above 40 euros, revealing widespread yield management across all carriers.</li>
+            <li class="fr-only">Le Tarif Étudiant reste le plus stable, autour de 25 euros, contre une fourchette pouvant atteindre 100 euros pour le Tarif Normal.</li>
+            <li class="en-only">The Student fare stays the most stable, around 25 euros, versus a spread of up to 100 euros for the Standard fare.</li>
+            <li class="fr-only">Vitesse moyenne du réseau analysé : 263,33 km/h, de 160 km/h pour OUIGO Train Classique à 320 km/h pour TGV INOUI et OUIGO.</li>
+            <li class="en-only">Average network speed: 263.33 km/h, from 160 km/h for OUIGO Classic to 320 km/h for TGV INOUI and OUIGO.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX</span><span class="tag fr-only">Modélisation en étoile</span><span class="tag en-only">Star Schema</span><span class="tag">Data Visualization</span><span class="tag">Open Data</span>
+          </div>
+          <div class="proj-links">
+            <a href="Etude_Tarifs_TGV_PowerBI.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-file-lines"></i>
+              <span class="fr-only">Voir le rapport complet en PDF</span><span class="en-only">View full report as PDF</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box reveal">
+        <h2 class="fr-only">Discutons de votre prochaine alternance</h2>
+        <h2 class="en-only">Let's talk about your next work-study hire</h2>
+        <p class="fr-only">Disponible à partir de septembre 2026, rythme 3 semaines / 3 semaines, ouvert aux opportunités en développement, data ou architecture SI.</p>
+        <p class="en-only">Available from September 2026, 3 weeks / 3 weeks schedule, open to opportunities in development, data or IS architecture.</p>
+        <div class="contact-ctas">
+          <a href="mailto:nour75004@gmail.com" class="btn btn-primary">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="fr-only">Envoyer un email</span><span class="en-only">Send an email</span>
+          </a>
+          <a href="CV_Nour_ELHADJ-MIMOUNE.pdf" download class="btn btn-ghost">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span class="fr-only">Télécharger le CV</span><span class="en-only">Download CV</span>
+          </a>
+          <a href="Calendrier_Formation_MIAGE_2026-2027.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="fr-only">Calendrier de formation</span><span class="en-only">Training calendar</span>
+          </a>
+        </div>
+        <div class="contact-meta">
+          <a href="mailto:nour75004@gmail.com"><i class="fa-solid fa-envelope"></i>nour75004@gmail.com</a>
+          <span><i class="fa-solid fa-phone"></i>07 80 28 27 44</span>
+          <span><i class="fa-solid fa-location-dot"></i>Paris, Île-de-France</span>
+          <a href="https://github.com/nourelislm93700" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>github.com/nourelislm93700</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="fr-only">© 2026 Nour ELHADJ-MIMOUNE. Conçu avec soin.</div>
+    <div class="en-only">© 2026 Nour ELHADJ-MIMOUNE. Crafted with care.</div>
+    <div class="socials">
+      <a href="https://github.com/nourelislm93700" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+      <a href="mailto:nour75004@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Lang toggle
+  const body = document.body;
+  const btnFr = document.getElementById('btnFr');
+  const btnEn = document.getElementById('btnEn');
+  function setLang(lang){
+    if(lang === 'en'){ body.classList.add('en'); btnEn.classList.add('active'); btnFr.classList.remove('active'); document.documentElement.lang='en'; }
+    else { body.classList.remove('en'); btnFr.classList.add('active'); btnEn.classList.remove('active'); document.documentElement.lang='fr'; }
+    restartTyping();
+  }
+  btnFr.addEventListener('click', ()=>setLang('fr'));
+  btnEn.addEventListener('click', ()=>setLang('en'));
+
+  // Mobile nav
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.15});
+  revealEls.forEach(el=> io.observe(el));
+
+  // Typewriter roles
+  const rolesFr = ["Développeur Full-Stack","Data Analyst & Power BI","Étudiant en Systèmes d'Information","Futur Alternant MIAGE"];
+  const rolesEn = ["Full-Stack Developer","Data Analyst & Power BI","Information Systems Student","Future MIAGE Apprentice"];
+  const typedEl = document.getElementById('typedText');
+  let ti=0, ci=0, deleting=false, timer=null;
+
+  function typeStep(){
+    const roles = body.classList.contains('en') ? rolesEn : rolesFr;
+    const current = roles[ti % roles.length];
+    if(!deleting){
+      ci++;
+      typedEl.textContent = current.slice(0, ci);
+      if(ci === current.length){ deleting = true; timer = setTimeout(typeStep, 1600); return; }
+    } else {
+      ci--;
+      typedEl.textContent = current.slice(0, ci);
+      if(ci === 0){ deleting = false; ti++; }
+    }
+    timer = setTimeout(typeStep, deleting ? 35 : 65);
+  }
+  function restartTyping(){
+    clearTimeout(timer);
+    ti = 0; ci = 0; deleting = false;
+    typedEl.textContent = '';
+    typeStep();
+  }
+  restartTyping();
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const navA = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', ()=>{
+    let current = '';
+    sections.forEach(sec=>{
+      const top = sec.offsetTop - 140;
+      if(window.scrollY >= top) current = sec.getAttribute('id');
+    });
+    navA.forEach(a=>{
+      a.style.color = a.getAttribute('href') === '#'+current ? 'var(--text)' : '';
+    });
+  });
+</script>
+</body>
+</html>

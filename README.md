@@ -4,7 +4,7 @@ Alternant MIAGE, Développeur Full-Stack & Data Analyst — Paris, Île-de-Franc
 
 Master 2 MIAGE (spécialité Systèmes d'Information Fiables et Intelligence des Données) à l'Université Paris Nanterre, à partir de septembre 2026, en alternance (3 semaines entreprise / 3 semaines formation).
 
-**Portfolio en ligne : [nourelislm93700.github.io/NOM_DU_DEPOT](https://nourelislm93700.github.io/NOM_DU_DEPOT)**
+**Portfolio en ligne : [nourelislm93700.github.io/NOM_DU_DEPOT](https://nourelislm93700.github.io/My-Portfolio)**
 
 ---
 

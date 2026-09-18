@@ -19,35 +19,35 @@ Apprenti Chef de Projet IT/AI en Master MIAGE (Systèmes d'Information Fiables e
 
 **Développement & Langages**
 
-Java (Spring Boot, JavaFX, Java EE, JSP/Servlet, JSF, Hibernate)
-Python (Pandas, NumPy, Matplotlib)
-PHP (Symfony)
-JavaScript
-C++
-HTML/CSS
-SAS
+- Java (Spring Boot, JavaFX, Java EE, JSP/Servlet, JSF, Hibernate)
+- Python (Pandas, NumPy, Matplotlib)
+- PHP (Symfony)
+- JavaScript
+- C++
+- HTML/CSS
+- SAS
 
 **Data & Analytics**
 
-Analyse de données (Python, SQL)
-Modélisation de données : MySQL, MongoDB
-Power BI, Google Data Studio, Tableau
-Reporting automatisé
-Jupyter Notebook, Dataiku
-Modélisation prédictive : régression, classification
+- Analyse de données (Python, SQL)
+- Modélisation de données : MySQL, MongoDB
+- Power BI, Google Data Studio, Tableau
+- Reporting automatisé
+- Jupyter Notebook, Dataiku
+- Modélisation prédictive : régression, classification
 
 **Outils & Environnements**
 
-Git, Git Bash
-Visual Studio, IntelliJ
-Windows, Linux (Ubuntu)
-Docker, VirtualBox
-Suite Office, Excel avancé
-Développement d'APIs REST
-Tests & documentation
-Modélisation UML, Merise
-N8N, Power Automate, Zapier, Make
-CI/CD : GitHub Actions, GitLab CI
+- Git, Git Bash
+- Visual Studio, IntelliJ
+- Windows, Linux (Ubuntu)
+- Docker, VirtualBox
+- Suite Office, Excel avancé
+- Développement d'APIs REST
+- Tests & documentation
+- Modélisation UML, Merise
+- N8N, Power Automate, Zapier, Make
+-CI/CD : GitHub Actions, GitLab CI
 
 Le détail complet des compétences est disponible sur le [portfolio](https://nourelislm93700.github.io/My-Portfolio).
 

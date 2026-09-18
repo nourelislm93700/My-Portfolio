@@ -26,7 +26,7 @@ En parallèle de mes études, j'ai occupé deux emplois de terrain (hôte d'accu
 - **Référentiels** : PMBOK, PRINCE2, ITIL, SAFe, LEAN Six Sigma
 - **Langues** : français (natif), anglais (courant)
 
-Le détail complet des compétences est disponible sur le [portfolio](https://nourelislm93700.github.io/My-Portfolio) et dans le [CV](./CV_Nour_ELHADJ-MIMOUNE.pdf).
+Le détail complet des compétences est disponible sur le [portfolio](https://nourelislm93700.github.io/My-Portfolio).
 
 ## Projets
 
@@ -40,11 +40,11 @@ Le détail complet des compétences est disponible sur le [portfolio](https://no
 | [Guide JO Paris 2024](https://github.com/nourelislm93700/JO-Paris-2024) | Guide touristique statique autour des Jeux Olympiques de Paris | HTML, CSS, JavaScript |
 | Étude tarifaire TGV ([rapport PDF](./Etude_Tarifs_TGV_PowerBI.pdf)) | Analyse des grilles tarifaires SNCF (TGV INOUI, OUIGO) sur 36 349 trajets, modèle en étoile Power BI | Power BI, Power Query, DAX |
 
-## Expérience professionnelle
+## Expérience professionnelle 
 
-- **Développeur Full-Stack**, LyeSmarTeck, Paris (mai à juillet 2025)
-- **Développeur Web**, Air France, Tremblay-en-France (juillet à septembre 2024)
-- **Data Analyst**, RATP Dev El Djazaïr, Alger (juin à août 2023)
+**Développeur Full-Stack (frontEnd - BackEnd), LyeSmarTeck, Paris (mai à août 2025)**
+**Assistant Chef de Projet Web, WebNova Solutions, Paris (juin à septembre 2024)**
+**Assistant Chef de Projet SI & Data Analyst, RATP Dev El Djazaïr, Alger (juin à août 2023)**
 
 ## Formation
 
@@ -55,7 +55,7 @@ Le détail complet des compétences est disponible sur le [portfolio](https://no
 
 ## Documents
 
-- [CV (PDF)](./CV_Nour_ELHADJ-MIMOUNE.pdf)
+
 - [Calendrier de formation Master 2 (PDF)](./Calendrier_Formation_MIAGE_2026-2027.pdf)
 - [Rapport Power BI, tarifs TGV (PDF)](./Etude_Tarifs_TGV_PowerBI.pdf)
 
@@ -66,4 +66,4 @@ Le détail complet des compétences est disponible sur le [portfolio](https://no
 - GitHub : [github.com/nourelislm93700](https://github.com/nourelislm93700)
 - Localisation : Paris, Île-de-France
 
-Disponible pour une alternance à partir de septembre 2026, rythme 3 semaines / 3 semaines.
+Disponible pour une alternance à partir de septembre 2026, rythme 2 jours / 3 jours.

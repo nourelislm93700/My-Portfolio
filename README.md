@@ -13,9 +13,7 @@ Comment consulter le portfolio : Téléchargez le projet en cliquant sur **Code*
 
 ## Profil
 
-Étudiant en systèmes d'information et intelligence des données, je combine une culture full-stack (Java/Spring Boot, JavaScript, PHP) avec des compétences en data (Python, SQL, Power BI) et en gestion de projet IT (Agile/Scrum, cadrage, gouvernance SI). Mes trois stages, chez LyeSmarTeck, Air France et RATP Dev, m'ont donné une expérience concrète du développement d'applications et de l'analyse de données en environnement de production.
-
-En parallèle de mes études, j'ai occupé deux emplois de terrain (hôte d'accueil à la RATP, chef de rang au Café Beaubourg) qui m'ont appris à gérer un planning chargé et à travailler au contact du public.
+Apprenti Chef de Projet IT/AI en Master MIAGE (Systèmes d'Information Fiables et Intelligence des Données) à l'Université Paris Nanterre, je me spécialise dans le pilotage de projets IT et l'exploitation de la donnée. Cette double compétence s'appuie sur trois expériences en entreprise qui m'ont permis de développer des applications web robustes (Java/Spring Boot, JavaScript, PHP) tout en conduisant des missions d'analyse et de reporting data (Python, SQL, Power BI). Curieux et rigoureux, j'aime autant coder une fonctionnalité que structurer un besoin, suivre un planning de développement ou construire un tableau de bord décisionnel. Je recherche un contrat d'apprentissage de 12 mois pour la rentrée 2026, disponible en rythme 2j/3j, full disponible à partir de mars 2027.
 
 ## Compétences clés
 
